@@ -1,0 +1,57 @@
+.slider-container{
+    display: flex;
+    position: relative;
+}
+.slider-viewport{
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid black;
+    flex-grow: 1;
+    z-index: 1;
+    position: relative;
+}
+.slider-viewport::-webkit-scrollbar{
+    /* ELIMINATES the scrollbar, DEPRECATED on firefox, check alternative method */
+    display: none;
+}
+.slider-nav{
+    /* REMEMBER: delete button color; */
+    /* Using flex-basis instead of width */
+    /* flex-basis: 20px;
+    flex-shrink: 0; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 35px;
+    cursor: pointer;
+    background-color: lightgray;
+    padding: 0;
+    border: 1px solid rgb(39, 26, 26);
+    outline: none;
+    opacity: 0.2;
+    transition: opacity .2s ease-in-out;
+    z-index: 3;
+
+}
+.slider-nav:focus {
+    border:  1px solid darkgray;
+}
+.slider-nav:hover {
+    opacity: 0.8;
+}
+.slider-left-nav{
+    left: 0;
+}
+.slider-right-nav{
+    right: 0;
+}
+.slider-container .slider-nav-disable{
+    opacity: 0;
+    z-index: 0;
+    cursor: default;
+    user-select:  none;
+    pointer-events: none;
+    transition: none;
+}

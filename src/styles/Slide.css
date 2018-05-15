@@ -1,0 +1,28 @@
+.slide {
+    display: inline-block;
+    vertical-align: top;
+    height: 50px;
+    width: 120px;
+    padding: 5px;
+    white-space: normal;
+    border-right: 1px solid black;
+}
+.slide:last-child{
+    border-right: none;
+}
+
+@media ( max-width: 900px ){
+    .slide{
+        width: 100px;
+    }
+}
+@media ( min-width: 901px) and ( max-width: 1200px ){
+    .slide{
+        width: 120px;
+    }
+}
+@media ( min-width: 1201px ){
+    .slide{
+        width: 140px;
+    }
+}
