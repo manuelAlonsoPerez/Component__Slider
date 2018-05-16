@@ -1,6 +1,10 @@
 .slider-container{
     display: flex;
+    display: inline-block;
     position: relative;
+    background-color: black;
+    width:100%;
+
 }
 .slider-viewport{
     white-space: nowrap;

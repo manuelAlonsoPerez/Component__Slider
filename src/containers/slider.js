@@ -43,12 +43,12 @@ export default class Slider extends Component{
     checkNumOfSlidesToScroll(){
         let numOfSlidesToScroll ;
 
-        if ( window.innerWidth <= 900 ) {
+        if ( window.innerWidth <= 800 ) {
             numOfSlidesToScroll = 'full';
-        } else if ( window.innerWidth > 900 && window.innerWidth <= 1200){
+        } else if ( window.innerWidth > 800 && window.innerWidth <= 1100){
             numOfSlidesToScroll = 4;
-        } else if ( window.innerWidth >1200){
-            numOfSlidesToScroll = 6;
+        } else if ( window.innerWidth >1100){
+            numOfSlidesToScroll = 4;
         }
        if ( this.state.numOfSlidesToScroll !== numOfSlidesToScroll ){
             //console.log('in here', numOfSlidesToScroll);
