@@ -6,6 +6,6 @@ import DashboardApp from './dashboard-app';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-    <DashboardApp />, 
+    <DashboardApp />,
     document.getElementById('root'));
 registerServiceWorker();
