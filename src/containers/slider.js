@@ -14,8 +14,10 @@ export default class Slider extends Component{
         this.state = {
             numOfSlidesToScroll: 4,
             allTheWayLeft: false,
-            allTheWayRight: false 
+            allTheWayRight: false,
+            maxViewportWidth: 0
         };
+        this.setViewportWidth = this.setViewportWidth.bind(this);
         this.onResize = this.onResize.bind(this);
         this.onScroll = this.onScroll.bind(this);
         this.onKeydown = this.onKeydown.bind(this);
@@ -28,7 +30,10 @@ export default class Slider extends Component{
         this.checkAllTheWayOver = this.checkAllTheWayOver.bind(this);
     }
 
+    
+
     componentDidMount(){
+        this.setViewportWidth();
         this.checkNumOfSlidesToScroll();
         this.checkAllTheWayOver();
         window.addEventListener('resize', this.throttleResize);
@@ -38,6 +43,12 @@ export default class Slider extends Component{
     componentWillUnmount(){
         window.removeEventListener('resize', this.throttleResize);
         window.removeEventListener('keydown', this.onKeydown);
+    }
+
+    setViewportWidth(){
+        let viewportWidth = window.innerWidth;
+        viewportWidth = viewportWidth * 0.9 - (viewportWidth * 0.9 % 4);
+        this.setState({ maxViewportWidth: viewportWidth});
     }
 
     checkNumOfSlidesToScroll(){
@@ -104,6 +115,7 @@ export default class Slider extends Component{
     }
 
     onResize(){
+        this.setViewportWidth();
         this.checkNumOfSlidesToScroll();
     }
 
@@ -199,8 +211,13 @@ export default class Slider extends Component{
             'slider-nav-disable': allTheWayRight
         }, navClasses);
 
+       
+
         return(
-            <div className='slider-container'>
+            <div 
+                className='slider-container'
+                style={{width:this.state.maxViewportWidth}}
+            >
                 <button 
                     className = { leftNavClasses }
                     onClick = { this.handleLeftNav }

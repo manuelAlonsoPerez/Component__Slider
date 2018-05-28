@@ -32,14 +32,13 @@ export default class Slide extends Component{
                 onMouseEnter = {this.mouseOver}
                 onMouseLeave = {this.mouseOut}
                 >
-                {/* <img src={logo} alt="logo" /> */}
                 { !this.state.slideHovered ? 
                     <div data-w-id="c060c302-695f-fbd5-b18d-41505927cbf5" className="homepage-card-details">
                         <div className="homepage-card-element">
                             <div className="homepage-card-icon">
-                                <img src={file_icon} width="25" height="25" />
+                                <img src={file_icon} alt='file-icon' width="25" height="25" />
                             </div>
-                            <div className="homepage-card-chapter">
+                            <div className="homepage-card-chapter" >
                                 <div>Chapter 3: ReactJs</div>
                             </div>
                             <div className="homepage-card-text-course">
@@ -54,7 +53,7 @@ export default class Slide extends Component{
                                 <div>Continue</div>
                             </div>
                             <div className="homepage-card-continue-icon">
-                                <img src={cont_icon} width="20" height="20"/>
+                                <img src={cont_icon} alt='cont-icon' width="20" height="20"/>
                             </div>
                         </div>
                         <div className="homepage-card-author">by Magnus Lysfjord</div>
