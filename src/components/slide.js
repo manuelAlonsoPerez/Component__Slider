@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import file_icon from '../images/file.png';
+import cont_icon from '../images/Continue.png';
 import '../styles/Slide.css';
 
 export default class Slide extends Component{
@@ -31,11 +32,12 @@ export default class Slide extends Component{
                 onMouseEnter = {this.mouseOver}
                 onMouseLeave = {this.mouseOut}
                 >
+                {/* <img src={logo} alt="logo" /> */}
                 { !this.state.slideHovered ? 
                     <div data-w-id="c060c302-695f-fbd5-b18d-41505927cbf5" className="homepage-card-details">
                         <div className="homepage-card-element">
                             <div className="homepage-card-icon">
-                                {/* <img src="images/File.png" width="25" height="25"> */}
+                                <img src={file_icon} width="25" height="25" />
                             </div>
                             <div className="homepage-card-chapter">
                                 <div>Chapter 3: ReactJs</div>
@@ -52,7 +54,7 @@ export default class Slide extends Component{
                                 <div>Continue</div>
                             </div>
                             <div className="homepage-card-continue-icon">
-                                {/* <img src="images/Continue.png" width="20" height="20"> */}
+                                <img src={cont_icon} width="20" height="20"/>
                             </div>
                         </div>
                         <div className="homepage-card-author">by Magnus Lysfjord</div>
@@ -60,12 +62,22 @@ export default class Slide extends Component{
                         <div className="homepage-card-level">Intermediate</div>
                     </div>
                 }
-                <div className="homepage-card-progress">
-                    <div>40%</div>
-                    <div className="homepage-card-progress-bar">
-                        <div data-w-id="8ce6c62e-f017-0d1d-8153-678a35351e6e" className="homepage-card-progress-bar-fill"></div>
+                {!this.state.slideHovered ?
+                    <div className="homepage-card-progress">
+                        <div>40%</div>
+                        <div className="homepage-card-progress-bar">
+                            <div data-w-id="8ce6c62e-f017-0d1d-8153-678a35351e6e" className="homepage-card-progress-bar-fill"></div>
+                        </div>
                     </div>
-                </div>
+                    :
+                    <div className="homepage-card-progress">
+                        <div>40%</div>
+                        <div className="homepage-card-progress-bar">
+                            <div data-w-id="8ce6c62e-f017-0d1d-8153-678a35351e6e" className="homepage-card-progress-bar-fill-hovered"></div>
+                        </div>
+                    </div>
+                }
+                
             </div>
         );
     }

@@ -272,6 +272,12 @@
     background-color: #94b2cc;
 }
 
+.homepage-card-progress-bar-fill-hovered {
+    width: 40%;
+    height: 100%;
+    background-color: #1f5566;
+}
+
 @media ( max-width: 900px ){
     .slide{
         width: 25%;
