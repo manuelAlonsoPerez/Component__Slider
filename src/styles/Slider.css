@@ -1,9 +1,9 @@
 .slider-container{
     display: inline-block;
     position: relative;
-    background-color: black;
+    background-color: transparent;
     height: 15vW;
-    margin: 10% auto 0 auto;
+    margin: 35% auto 0 auto;
 }
 .slider-viewport{
     white-space: nowrap;

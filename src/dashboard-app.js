@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Slider from './containers/slider';
 import SearchBar from './containers/search-bar';
+import HomepageTop from './containers/homepage-top';
 
 import './styles/DashboardApp.css';
-
-
 import WebFont from 'webfontloader';
 
 WebFont.load({
@@ -21,6 +20,7 @@ export default class DashboardApp extends Component {
     return (
       <div className="dashboard-app">
         <SearchBar />
+        <HomepageTop />
         <Slider />
       </div>
     );
