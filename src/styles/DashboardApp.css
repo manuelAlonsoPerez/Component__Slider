@@ -1,5 +1,14 @@
 .dashboard-app {
-  text-align: center;
+  /* text-align: center; */
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #000e13;
 }
 
 

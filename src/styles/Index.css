@@ -14,9 +14,9 @@ body {
 }
 
 #root {
-  padding: 20px;
+  /* padding: 20px;
   /* REMEMBER to remove */
-  border: 1px solid black;
+  /* border: 1px solid black; */ 
 }
 
 button {

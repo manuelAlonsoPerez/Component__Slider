@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slider from './containers/slider';
+import SearchBar from './containers/search-bar';
 
 import './styles/DashboardApp.css';
 
@@ -19,6 +20,7 @@ export default class DashboardApp extends Component {
   render() {
     return (
       <div className="dashboard-app">
+        <SearchBar />
         <Slider />
       </div>
     );

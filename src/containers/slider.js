@@ -62,7 +62,6 @@ export default class Slider extends Component{
             numOfSlidesToScroll = 4;
         }
        if ( this.state.numOfSlidesToScroll !== numOfSlidesToScroll ){
-            //console.log('in here', numOfSlidesToScroll);
             this.setState ({
                 numOfSlidesToScroll
             });
@@ -103,8 +102,6 @@ export default class Slider extends Component{
                 timeToScroll: 400
             }
         } else {
-            //let widthOfSlide = 120; HARDCODED
-            //let widthOfSlide = document.querySelector('.slide').offsetWidth; USING DOCUMENT from js
             let widthOfSlide = findDOMNode(this.slide).offsetWidth;
             let timeToMoveOneSlide = 400;
             return{
@@ -216,7 +213,7 @@ export default class Slider extends Component{
         return(
             <div 
                 className='slider-container'
-                style={{width:this.state.maxViewportWidth}}
+                style={{ width : this.state.maxViewportWidth }}
             >
                 <button 
                     className = { leftNavClasses }
