@@ -1,4 +1,15 @@
 import React, {Component} from 'react';
+import res_icon from '../images/Resources.png';
+import open_book_icon from '../images/Open-Book.png';
+import exercise_icon from '../images/Exercise.png';
+import analytics_icon from '../images/analytics.png';
+import total_time_icon from '../images/Total-Time.png';
+import remaining_time_icon from  '../images/Remaining-Time.png';
+import last_watched_icon from '../images/Last-Watched.png';
+import file_icon from '../images/file.png';
+import author_icon from '../images/Author.png';
+import level_icon from '../images/Level.png';
+import continue_icon from '../images/Continue.png';
 
 import '../styles/HomepageTop.css';
 
@@ -11,7 +22,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-title">
                         <div className="homepage-top-title-content">
                             <div className="homepage-top-title-icon">
-                                {/* <img src="images/Resources.png" width="30" height="30"> */}
+                                <img src={res_icon} alt='resources-icon' width="30" height="30"/>   
                             </div>
                             <div className="homepage-top-title-text">
                                 <div>Resources</div>
@@ -22,7 +33,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                {/* <img src="images/Open-Book.png" width="25" height="25"> */}
+                                <img src={open_book_icon} alt='open-book-icon' width="25" height="25"/>   
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>View the course description and content.</div>
@@ -32,7 +43,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                {/* <img src="images/Exercise.png" width="26" height="25"> */}
+                                <img src={exercise_icon} width="26" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>Continue practicing with exercises.</div>
@@ -42,7 +53,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                {/* <img src="images/Analytics.png" width="25" height="25"> */}
+                                <img src={analytics_icon} width="25" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>Visualize your detailed analytics.</div>
@@ -54,7 +65,7 @@ export default class HomepageTop extends Component {
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-time">
                                 <div className="homepage-top-time-icon">
-                                    {/* <img src="images/Total-Time.png" width="25" height="25"> */}
+                                    <img src={total_time_icon} width="25" height="25" />
                                 </div>
                                 <div className="homepage-top-time-text">
                                     <div>Total: 11h 30m</div>
@@ -62,7 +73,7 @@ export default class HomepageTop extends Component {
                             </div>
                             <div className="homepage-top-time">
                                 <div className="homepage-top-time-icon">
-                                    {/* <img src="images/Remaining-Time.png" width="25" height="25"> */}
+                                    <img src={remaining_time_icon} width="25" height="25" />
                                 </div>
                                 <div className="homepage-top-time-text">
                                     <div>Remaining: 4h 20m</div>
@@ -75,7 +86,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-title">
                         <div className="homepage-top-title-content">
                             <div className="homepage-top-title-icon">
-                                {/* <img src="images/Last-Watched.png" width="30" height="30"> */}
+                                <img src={ last_watched_icon } width="30" height="30" />
                             </div>
                             <div className="homepage-top-title-text">
                                 <div>Last Watched: Chapter 3 Name</div>
@@ -86,17 +97,17 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                {/* <img src="images/File.png" width="25" height="25"> */}
+                                <img src={ file_icon } alt='file-icon' width="25" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
-                            <   div>JavaScript: From Zero To Hero</div>
+                                <div>JavaSscript: From Zero To Hero</div>
                             </div>
                         </div>
                     </div>
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                {/* <img src="images/Author.png" width="25" height="25"> */}
+                                <img src={author_icon} alt='author-icon' width="25" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>Author Name</div>
@@ -106,7 +117,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                {/* <img src="images/Level.png" width="25" height="25"> */}
+                                <img src={level_icon} alt='level-icon' width="25" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>Intermediate</div>
@@ -126,7 +137,7 @@ export default class HomepageTop extends Component {
                                     <div>Continue</div>
                                 </div>
                                 <div className="homepage-top-continue-icon">
-                                    {/* <img src="images/Continue.png" width="20" height="20"> */}
+                                    <img src={continue_icon} alt='continue-icon' width="20" height="20" />
                                 </div>
                             </div>
                             <div className="image-progress">

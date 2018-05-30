@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Slider from './containers/slider';
 import SearchBar from './containers/search-bar';
+import Sidebar from './containers/side-bar';
 import HomepageTop from './containers/homepage-top';
 
 import './styles/DashboardApp.css';
@@ -20,6 +21,7 @@ export default class DashboardApp extends Component {
     return (
       <div className="dashboard-app">
         <SearchBar />
+        <Sidebar />
         <HomepageTop />
         <Slider />
       </div>

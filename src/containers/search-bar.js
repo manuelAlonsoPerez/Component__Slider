@@ -11,7 +11,7 @@ export default class SearchBar extends Component{
                 <div className="nav-search">
                     <div className="form-block-search w-form">
                         <form id="email-form" name="email-form" data-name="Email Form" className="form-search">
-                            <input type="text" className="form-input-field w-input" maxlength="256" name="field" data-name="Field" placeholder="Search" id="field" />
+                            <input type="text" className="form-input-field w-input" maxLength="256" name="field" data-name="Field" placeholder="Search" id="field" />
                         </form>
                         <div className="w-form-done">
                             <div> Thank you! Your submission has been received! </div>
