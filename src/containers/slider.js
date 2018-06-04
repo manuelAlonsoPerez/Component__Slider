@@ -5,7 +5,7 @@ import { findDOMNode } from 'react-dom';
 import throttle from 'lodash.throttle';
 import classNames from 'classnames';
 import Slide from '../components/slide';
-import data from '../data.json';
+// import data from '../data.json';
 import scrollTo from '../scrollToAnimate';
 import '../styles/Slider.css';
 
@@ -40,12 +40,12 @@ class Slider extends Component{
     
 
     componentDidMount(){
-        this.getCourses();
         this.setViewportWidth();
         this.checkNumOfSlidesToScroll();
         this.checkAllTheWayOver();
         window.addEventListener('resize', this.throttleResize);
         window.addEventListener('keydown', this.onKeydown);
+        this.getCourses();
     }
 
     componentWillUnmount(){
@@ -80,6 +80,9 @@ class Slider extends Component{
         const { sliderViewport } = this.refs;
         // If  scrollLeft === 0 HIDE button LEFT
         let allTheWayLeft = false;
+        let allTheWayRight = false;
+
+        this.setState( { allTheWayRight: allTheWayRight  } );
 
         if ( sliderViewport.scrollLeft === 0 ){
             allTheWayLeft = true;
@@ -89,16 +92,21 @@ class Slider extends Component{
         }
 
         // If scrollLeft + lengthOfViewPortOffsetWidth === real length of viewport  HIDE button RIGHT
-        let allTheWayRight = false;
+      //  let allTheWayRight = false;
         let amountScrolled = sliderViewport.scrollLeft;
         let viewportLength = sliderViewport.clientWidth;
         let totalWidthOfSlider = sliderViewport.scrollWidth;
-        if( amountScrolled +  viewportLength === totalWidthOfSlider ){
+        console.log(`Amount scrolled: ${amountScrolled}`);
+        console.log(`Viewport length: ${viewportLength}`);
+        console.log(`Total slider width: ${totalWidthOfSlider}`);
+
+        if( amountScrolled +  viewportLength === totalWidthOfSlider && amountScrolled !== 0){
+            console.log('in here');
             allTheWayRight = true;
         }
         if( this.state.allTheWayRight !==  allTheWayRight ){
             this.setState( { allTheWayRight: allTheWayRight  } );
-        }
+        } 
     }
 
     widthAndTimeToScroll(){
@@ -190,10 +198,13 @@ class Slider extends Component{
 
     renderSlides(){
         return (
+            // data.map( (course) => {
             this.props.courses.map( (course) => {
                 return(
                     <Slide 
+                        // name = {course.name}
                         name = {course.title}
+                        // key ={course.abreviation}
                         key = {course.id}
                         ref = { compSlide => this.slide = compSlide }
                     />
@@ -223,7 +234,7 @@ class Slider extends Component{
         if (this.props.isLoading) {
             return <p>Loading…</p>;
         }
-        console.log(this.props.courses);
+        // console.log(this.props.courses);
         return(
             <div 
                 className='slider-container'

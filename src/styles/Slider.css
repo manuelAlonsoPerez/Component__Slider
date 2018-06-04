@@ -27,7 +27,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 35px;
+    width: 3%;
     cursor: pointer;
     background-color: transparent;
     padding: 0;
@@ -47,9 +47,13 @@
     background-color: rgb(27, 27, 25);
 }
 .slider-left-nav{
+    opacity: 0.3;
+    background-color: rgb(27, 27, 25);
     left: 0;
 }
 .slider-right-nav{
+    opacity: 0.3;
+    background-color: rgb(27, 27, 25);
     right: 0;
 }
 .slider-container .slider-nav-disable{
