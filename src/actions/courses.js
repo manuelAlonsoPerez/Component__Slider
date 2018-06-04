@@ -21,7 +21,7 @@ export function coursesAreLoading(bool) {
 export function coursesFetchDataSuccess(courses) {
     return {
         type: COURSES_FETCH_DATA_SUCCESS,
-        courses
+        payload: courses
     };
 }
 
@@ -36,9 +36,10 @@ export function coursesFetchData(url) {
                 }
 
                 dispatch(coursesAreLoading(false));
-
+                console.log(response);
                 return response;
             })
+            
             .then((response) => dispatch(coursesFetchDataSuccess(response.data)))
             .catch(() => dispatch(coursesHaveError(true)));
     };

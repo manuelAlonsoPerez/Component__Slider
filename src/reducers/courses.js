@@ -23,7 +23,7 @@ export function coursesAreLoading(state = false, action) {
 export function courses(state = [], action) {
     switch (action.type) {
         case COURSES_FETCH_DATA_SUCCESS:
-            return action.courses;
+            return action.payload;
 
         default:
             return state;

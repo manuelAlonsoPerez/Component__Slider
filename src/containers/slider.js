@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { coursesFetchData } from '../actions/courses';
 import { findDOMNode } from 'react-dom';
 import throttle from 'lodash.throttle';
 import classNames from 'classnames';
@@ -7,7 +9,7 @@ import data from '../data.json';
 import scrollTo from '../scrollToAnimate';
 import '../styles/Slider.css';
 
-export default class Slider extends Component{
+class Slider extends Component{
 
     constructor(props){
         super(props);
@@ -28,11 +30,17 @@ export default class Slider extends Component{
         this.handleLeftNav = this.handleLeftNav.bind(this);
         this.handleRightNav = this.handleRightNav.bind(this);
         this.checkAllTheWayOver = this.checkAllTheWayOver.bind(this);
+        this.getCourses = this.getCourses.bind(this);
     }
 
+    getCourses(){
+        const ROOT_URL = 'http://contentmanufacturingapi.azurewebsites.net/courses';
+        this.props.fetchData(ROOT_URL);
+    }
     
 
     componentDidMount(){
+        this.getCourses();
         this.setViewportWidth();
         this.checkNumOfSlidesToScroll();
         this.checkAllTheWayOver();
@@ -182,11 +190,11 @@ export default class Slider extends Component{
 
     renderSlides(){
         return (
-            data.map( (state) => {
+            this.props.courses.map( (course) => {
                 return(
                     <Slide 
-                        name = {state.name}
-                        key = {state.abbreviation}
+                        name = {course.title}
+                        key = {course.id}
                         ref = { compSlide => this.slide = compSlide }
                     />
                 );
@@ -208,8 +216,14 @@ export default class Slider extends Component{
             'slider-nav-disable': allTheWayRight
         }, navClasses);
 
-       
+        if (this.props.hasError) {
+            return <p>Sorry! There was an error loading the items</p>;
+        }
 
+        if (this.props.isLoading) {
+            return <p>Loading…</p>;
+        }
+        console.log(this.props.courses);
         return(
             <div 
                 className='slider-container'
@@ -238,3 +252,19 @@ export default class Slider extends Component{
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        courses: state.courses,
+        hasError: state.coursesHaveError,
+        isLoading: state.coursesAreLoading
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: (url) => dispatch(coursesFetchData(url))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Slider);
