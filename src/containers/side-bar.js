@@ -43,7 +43,7 @@ export default class Sidebar extends Component{
                     <div data-w-id="8901711b-d2d1-bc40-7e76-7a4484e7e728" 
                         className="nav-account">
                         <div className="nav-account-details">
-                            <img src={account_photo_icon} alt='account-photo-icon' width="80" height="80" className="nav-account-photo" /> 
+                            <img src={account_photo_icon} alt='account-icon' width="80" height="80" className="nav-account-photo" /> 
                             <div className="nav-account-name">Student Name</div>
                             <div className="nav-account-email">studentname@gmail.com</div>
                         </div>

@@ -43,7 +43,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                <img src={exercise_icon} width="26" height="25" />
+                                <img src={exercise_icon} alt='exercise-icon' width="26" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>Continue practicing with exercises.</div>
@@ -53,7 +53,7 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-option">
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-option-icon">
-                                <img src={analytics_icon} width="25" height="25" />
+                                <img src={analytics_icon} alt='analytics-icon' width="25" height="25" />
                             </div>
                             <div className="homepage-top-option-text">
                                 <div>Visualize your detailed analytics.</div>
@@ -65,7 +65,7 @@ export default class HomepageTop extends Component {
                         <div className="homepage-top-option-content">
                             <div className="homepage-top-time">
                                 <div className="homepage-top-time-icon">
-                                    <img src={total_time_icon} width="25" height="25" />
+                                    <img src={total_time_icon} alt='total-time-icon' width="25" height="25" />
                                 </div>
                                 <div className="homepage-top-time-text">
                                     <div>Total: 11h 30m</div>
@@ -73,7 +73,7 @@ export default class HomepageTop extends Component {
                             </div>
                             <div className="homepage-top-time">
                                 <div className="homepage-top-time-icon">
-                                    <img src={remaining_time_icon} width="25" height="25" />
+                                    <img src={remaining_time_icon} alt='remaining-time-icon' width="25" height="25" />
                                 </div>
                                 <div className="homepage-top-time-text">
                                     <div>Remaining: 4h 20m</div>
@@ -86,10 +86,10 @@ export default class HomepageTop extends Component {
                     <div className="homepage-top-title">
                         <div className="homepage-top-title-content">
                             <div className="homepage-top-title-icon">
-                                <img src={ last_watched_icon } width="30" height="30" />
+                                <img src={ last_watched_icon }  alt='last-watched-icon' width="30" height="30" />
                             </div>
                             <div className="homepage-top-title-text">
-                                <div>Last Watched: Chapter 3 Name</div>
+                                <div>Last Watched: Chapter 3 Branch 2</div>
                             </div>
                         </div>
                         <div className="top-option-bar"></div>
